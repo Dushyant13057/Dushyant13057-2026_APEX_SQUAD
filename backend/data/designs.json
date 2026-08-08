@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "height": 170,
+    "chest": 40,
+    "waist": 32,
+    "shoulder": 18,
+    "selectedFabric": {
+      "fabric": "Wool",
+      "color": "Black",
+      "pricePerMeter": 600,
+      "wholesaler": "Heritage Textiles"
+    },
+    "selectedColor": "Black",
+    "cuttingMethod": "ai",
+    "outfitType": "Sando",
+    "size": "M",
+    "threadColor": "#FFFFFF",
+    "threadWidth": 2,
+    "embroideryType": "Chain Stitch",
+    "embroideryPlacement": "chest",
+    "pattern": "Stripes",
+    "clothColor": "#000000",
+    "feasible": true,
+    "costs": {
+      "fabric": 1500,
+      "stitching": 500,
+      "thread": 100,
+      "embroidery": 200,
+      "total": 2300
+    },
+    "createdAt": "2026-04-12T08:51:42.055Z"
+  }
+]

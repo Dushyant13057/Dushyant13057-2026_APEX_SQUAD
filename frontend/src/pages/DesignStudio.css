@@ -1,0 +1,700 @@
+/* DesignStudio.css — upgraded for 10 measurements + body types */
+
+.design-studio {
+  min-height: 100vh;
+  background: var(--gradient-dark);
+}
+
+.studio-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ---- Step Indicator ---- */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 32px;
+  padding: 16px 0;
+  overflow-x: auto;
+}
+
+.step-dot-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.step-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.step-dot.active {
+  background: var(--gradient-gold);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-glow);
+}
+
+.step-dot.completed {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.step-dot.inactive {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.step-label {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.step-connector {
+  width: 24px;
+  height: 2px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.step-connector.completed {
+  background: var(--success);
+}
+
+/* ---- Step Content ---- */
+.step-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.step-header {
+  margin-bottom: 24px;
+}
+
+.step-header h2 {
+  font-size: 1.5rem;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+
+.step-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---- Measurements Layout ---- */
+.measurements-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.measurement-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.measurement-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.measurement-input .form-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+.measurement-input .unit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+/* ---- Body Type / Gender Selectors ---- */
+.body-selectors {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.body-selector-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.body-selector-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.body-selector-btn.active {
+  background: rgba(212, 165, 116, 0.15);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.gender-toggle {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.gender-btn.active {
+  background: rgba(212, 165, 116, 0.12);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ---- 3D Viewport Wrapper ---- */
+.mannequin-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: radial-gradient(ellipse at center, rgba(212,165,116,0.08), transparent 70%);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  min-height: 420px;
+}
+
+/* ---- Fabric Grid ---- */
+.fabric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.fabric-card {
+  padding: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.fabric-card.selected {
+  border-color: var(--accent-gold) !important;
+  box-shadow: var(--shadow-glow);
+}
+
+.fabric-swatch {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.fabric-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.fabric-price {
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fabric-wholesaler {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 4px 0;
+}
+
+.fabric-colors {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.color-dot:hover,
+.color-dot.selected {
+  border-color: var(--accent-gold);
+  transform: scale(1.2);
+}
+
+/* ---- Cutting Layout ---- */
+.cutting-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 20px;
+}
+
+.canvas-container {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.canvas-container canvas {
+  display: block;
+  width: 100%;
+  cursor: crosshair;
+}
+
+.cutting-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tool-btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+  text-align: left;
+}
+
+.tool-btn:hover {
+  border-color: var(--accent-gold);
+}
+
+.tool-btn.active {
+  background: rgba(212, 165, 116, 0.12);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ---- Placement Layout ---- */
+.placement-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+}
+
+.pieces-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.piece-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.piece-item:hover { border-color: var(--accent-gold); }
+
+.piece-item.placed {
+  opacity: 0.5;
+  border-color: var(--success);
+}
+
+.piece-preview {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+}
+
+.piece-info h4 {
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+}
+
+.piece-info p {
+  font-size: 0.72rem;
+}
+
+/* ---- Stitching ---- */
+.stitching-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.thread-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.thread-color {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.thread-color:hover,
+.thread-color.selected {
+  border-color: var(--accent-gold);
+  transform: scale(1.15);
+  box-shadow: var(--shadow-glow);
+}
+
+.width-slider {
+  width: 100%;
+  accent-color: var(--accent-gold);
+}
+
+.cost-display {
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.cost-row:last-child {
+  border-bottom: none;
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 1rem;
+  padding-top: 10px;
+}
+
+/* ---- Outfits Grid ---- */
+.outfits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+}
+
+.outfit-card {
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.outfit-card.selected {
+  border-color: var(--accent-gold) !important;
+  box-shadow: var(--shadow-glow);
+}
+
+.outfit-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 8px 0 6px;
+}
+
+.sizes-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.size-btn {
+  width: 36px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.size-btn.selected {
+  background: rgba(212, 165, 116, 0.15);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ---- Embroidery ---- */
+.embroidery-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.embroidery-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.embroidery-type {
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.embroidery-type.selected {
+  border-color: var(--accent-gold) !important;
+}
+
+.placement-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.placement-option {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.placement-option.selected {
+  border-color: var(--accent-gold) !important;
+  color: var(--accent-gold);
+}
+
+.upload-area {
+  border: 2px dashed var(--border-accent);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.upload-area:hover {
+  border-color: var(--accent-gold);
+  background: rgba(212, 165, 116, 0.05);
+}
+
+/* ---- Pattern & Color ---- */
+.pattern-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pattern-card {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+  transition: all 0.2s;
+}
+
+.pattern-card:hover,
+.pattern-card.selected {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-glow);
+}
+
+.pattern-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.color-picker-section {
+  margin-top: 8px;
+}
+
+.color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.color-swatch:hover,
+.color-swatch.selected {
+  border-color: var(--accent-gold);
+  transform: scale(1.15);
+}
+
+/* ---- Feasibility ---- */
+.feasibility-result {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.feasibility-icon {
+  font-size: 4rem;
+  margin-bottom: 12px;
+}
+
+.feasibility-status {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.feasibility-status.success { color: var(--success); }
+.feasibility-status.error { color: var(--error); }
+
+.feasibility-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+}
+
+.feasibility-check { color: var(--success); font-weight: 600; }
+.feasibility-fail { color: var(--error); font-weight: 600; }
+
+.design-summary {
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.summary-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.summary-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ---- Step Navigation ---- */
+.step-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ---- Fit Type Selector ---- */
+.fit-selector {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.fit-btn {
+  padding: 5px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.fit-btn.active {
+  background: rgba(212, 165, 116, 0.12);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .measurements-layout,
+  .cutting-layout,
+  .placement-layout,
+  .stitching-layout,
+  .embroidery-layout {
+    grid-template-columns: 1fr;
+  }
+  .measurement-form {
+    grid-template-columns: 1fr;
+  }
+}

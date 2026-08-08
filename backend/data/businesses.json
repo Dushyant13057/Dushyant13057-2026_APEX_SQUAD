@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Royal Fabrics",
+    "type": "wholesaler",
+    "contact": "+91 98765 43210",
+    "services": ["Cotton", "Silk", "Linen", "Polyester", "Denim"],
+    "pricing": { "Cotton": 250, "Silk": 800, "Linen": 450, "Polyester": 180, "Denim": 350 },
+    "rating": 4.5,
+    "reviews": [
+      { "user": "Rahul", "comment": "Excellent quality fabrics!", "rating": 5 },
+      { "user": "Priya", "comment": "Good variety and fair prices", "rating": 4 }
+    ],
+    "inventory": [
+      { "fabric": "Cotton", "colors": ["White", "Blue", "Black", "Red", "Green"], "pricePerMeter": 250, "available": true },
+      { "fabric": "Silk", "colors": ["Gold", "Maroon", "Ivory", "Navy"], "pricePerMeter": 800, "available": true },
+      { "fabric": "Linen", "colors": ["Beige", "White", "Sky Blue", "Olive"], "pricePerMeter": 450, "available": true },
+      { "fabric": "Polyester", "colors": ["Black", "White", "Grey", "Navy", "Red"], "pricePerMeter": 180, "available": true },
+      { "fabric": "Denim", "colors": ["Dark Blue", "Light Blue", "Black", "Grey"], "pricePerMeter": 350, "available": true }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Heritage Textiles",
+    "type": "wholesaler",
+    "contact": "+91 87654 32109",
+    "services": ["Wool", "Chiffon", "Velvet", "Satin"],
+    "pricing": { "Wool": 600, "Chiffon": 500, "Velvet": 750, "Satin": 550 },
+    "rating": 4.2,
+    "reviews": [
+      { "user": "Sneha", "comment": "Premium quality materials", "rating": 4 },
+      { "user": "Amit", "comment": "Great for wedding outfits", "rating": 5 }
+    ],
+    "inventory": [
+      { "fabric": "Wool", "colors": ["Grey", "Black", "Brown", "Navy"], "pricePerMeter": 600, "available": true },
+      { "fabric": "Chiffon", "colors": ["Pink", "Peach", "Lavender", "White"], "pricePerMeter": 500, "available": true },
+      { "fabric": "Velvet", "colors": ["Maroon", "Royal Blue", "Emerald", "Black"], "pricePerMeter": 750, "available": true },
+      { "fabric": "Satin", "colors": ["Ivory", "Gold", "Silver", "Rose"], "pricePerMeter": 550, "available": true }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Stitch Master",
+    "type": "tailor",
+    "contact": "+91 76543 21098",
+    "services": ["Shirts", "Trousers", "Suits", "Traditional Wear"],
+    "pricing": { "Shirts": 500, "Trousers": 400, "Suits": 2500, "Traditional Wear": 1500 },
+    "rating": 4.8,
+    "reviews": [
+      { "user": "Vikram", "comment": "Best tailor in the city!", "rating": 5 },
+      { "user": "Ananya", "comment": "Perfect fit every time", "rating": 5 }
+    ],
+    "pastWork": ["Formal Suits", "Wedding Sherwanis", "Casual Shirts"]
+  },
+  {
+    "id": 4,
+    "name": "Perfect Fit Tailors",
+    "type": "tailor",
+    "contact": "+91 65432 10987",
+    "services": ["T-Shirts", "Casual Wear", "Dresses", "Alterations"],
+    "pricing": { "T-Shirts": 300, "Casual Wear": 600, "Dresses": 1200, "Alterations": 200 },
+    "rating": 4.3,
+    "reviews": [
+      { "user": "Neha", "comment": "Good work on casual wear", "rating": 4 },
+      { "user": "Karan", "comment": "Affordable and reliable", "rating": 4 }
+    ],
+    "pastWork": ["T-Shirts", "Dresses", "Jeans Alterations"]
+  },
+  {
+    "id": 5,
+    "name": "PrintZone Studio",
+    "type": "printer",
+    "contact": "+91 54321 09876",
+    "services": ["Screen Printing", "DTG Printing", "Sublimation", "Embossing"],
+    "pricing": { "Screen Printing": 150, "DTG Printing": 300, "Sublimation": 250, "Embossing": 400 },
+    "rating": 4.6,
+    "reviews": [
+      { "user": "Rohit", "comment": "Vibrant prints that last!", "rating": 5 },
+      { "user": "Meera", "comment": "Great for bulk orders", "rating": 4 }
+    ]
+  }
+]

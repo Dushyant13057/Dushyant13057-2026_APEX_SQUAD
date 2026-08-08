@@ -1,0 +1,240 @@
+/* ============================================
+   SPLASH SCREEN STYLES
+   Animated stitch logo + fabric texture  
+   ============================================ */
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Fabric texture overlay */
+.splash-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(212, 165, 116, 0.02) 0px,
+      rgba(212, 165, 116, 0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(212, 165, 116, 0.02) 0px,
+      rgba(212, 165, 116, 0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  pointer-events: none;
+}
+
+/* Radial glow behind logo */
+.splash-screen::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; filter: blur(2px); }
+}
+
+.splash-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Needle animation */
+.splash-needle {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: needleStitch 1.5s ease-in-out forwards;
+}
+
+@keyframes needleStitch {
+  0% { top: -100px; left: -20%; opacity: 0; transform: rotate(-30deg) scale(1.5); }
+  20% { opacity: 1; }
+  50% { top: -20px; left: 50%; transform: rotate(0deg) scale(1.2); filter: drop-shadow(0 0 15px var(--accent-gold)); }
+  100% { top: -60px; left: 100%; opacity: 0; transform: rotate(30deg) scale(1); }
+}
+
+.splash-needle svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--accent-gold);
+  filter: drop-shadow(0 0 8px rgba(212, 165, 116, 0.5));
+}
+
+/* Logo text */
+.splash-logo {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  position: relative;
+  overflow: hidden;
+}
+
+.splash-logo-design {
+  display: inline-block;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: stitchReveal 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.splash-logo-x {
+  display: inline-block;
+  font-size: 6rem;
+  font-style: italic;
+  background: linear-gradient(135deg, #e8c9a0, #d4a574, #cd7f32);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: stitchReveal 1.2s ease-out 0.4s forwards;
+  opacity: 0;
+  margin-left: 10px;
+}
+
+@keyframes stitchReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    filter: blur(15px);
+  }
+  50% {
+    filter: blur(4px);
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    text-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
+  }
+}
+
+/* Stitch line decoration */
+.splash-stitch-line {
+  width: 0;
+  height: 2px;
+  margin: 20px auto;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-gold) 0px,
+    var(--accent-gold) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+  animation: stitchLine 1s ease-out 0.8s forwards;
+}
+
+@keyframes stitchLine {
+  to { width: 250px; }
+}
+
+/* Tagline */
+.splash-tagline {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: 16px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1.2s forwards;
+}
+
+/* Thread decorations */
+.splash-threads {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.thread {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--accent-gold-dark), transparent);
+  opacity: 0.15;
+  animation: threadFall 3s ease-in-out infinite;
+}
+
+.thread:nth-child(1) { left: 10%; height: 100px; animation-delay: 0s; }
+.thread:nth-child(2) { left: 25%; height: 150px; animation-delay: 0.5s; }
+.thread:nth-child(3) { left: 40%; height: 80px; animation-delay: 1s; }
+.thread:nth-child(4) { left: 60%; height: 120px; animation-delay: 0.3s; }
+.thread:nth-child(5) { left: 75%; height: 90px; animation-delay: 0.8s; }
+.thread:nth-child(6) { left: 90%; height: 130px; animation-delay: 1.3s; }
+
+@keyframes threadFall {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.15; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Loading dots */
+.splash-loading {
+  position: absolute;
+  bottom: 60px;
+  display: flex;
+  gap: 8px;
+}
+
+.splash-loading span {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  animation: loadingDot 1.2s ease-in-out infinite;
+}
+
+.splash-loading span:nth-child(2) { animation-delay: 0.2s; }
+.splash-loading span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loadingDot {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Fade out transition */
+.splash-screen.fade-out {
+  animation: splashFadeOut 0.8s ease-in-out forwards;
+}
+
+@keyframes splashFadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
